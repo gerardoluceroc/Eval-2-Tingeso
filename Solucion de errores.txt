@@ -1,0 +1,28 @@
+- Problemas con el load balancer en la api gateway a la hora de llamar a un microservicio
+
+
+
+- org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter is deprecated (está obsoleto)
+
+
+
+
+- Internal Server Error 500 a la hora de autenticarse, producido por un stack over flow error por parte de la clase Authentication Manager
+
+Fuente Solución: https://stackoverflow.com/questions/42729981/stackoverflowerror-trying-to-expose-authenticationmanager-in-spring-websecurityc
+
+Solucion: CAMBIAR
+	@Override
+	@Bean
+	public AuthenticationManager authenticationManager() throws Exception {
+    		return super.authenticationManagerBean();
+	}
+
+	POR:
+	@Override
+	@Bean
+	public AuthenticationManager authenticationManagerBean() throws Exception {
+    		return super.authenticationManagerBean();
+	}
+	
+	
