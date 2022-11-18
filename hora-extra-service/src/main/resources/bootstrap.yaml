@@ -1,12 +1,12 @@
 spring:
   application:
-    name: empleado-service
+    name: hora-extra-service
   cloud:
     config:
       enabled: true
       uri: http://localhost:8091
   datasource:
-    url: jdbc:mysql://localhost:33060/empleadoServiceBD
+    url: jdbc:mysql://localhost:33060/horasExtrasBD
     username: root
     password: admin
   jpa:

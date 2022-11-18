@@ -1,4 +1,4 @@
-package com.service.empleadoservice;
+package com.service.horaextraservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class EmpleadoServiceApplication {
+public class HoraExtraServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EmpleadoServiceApplication.class, args);
+		SpringApplication.run(HoraExtraServiceApplication.class, args);
 	}
 
 }
