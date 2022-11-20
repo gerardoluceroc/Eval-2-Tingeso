@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: planilla-sueldo-service
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8091
+  datasource:
+    url: jdbc:mysql://localhost:33060/planillaSueldoServiceBD
+    username: root
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+#server:
+#  port: 8092
+
+#Se le indica a Prometheus que agregue todas las métricas a la hora de monitorear
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
