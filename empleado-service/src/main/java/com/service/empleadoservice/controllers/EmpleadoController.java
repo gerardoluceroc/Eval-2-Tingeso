@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.service.empleadoservice.entities.EmpleadoEntity;
-import com.service.empleadoservice.models.TokenInfo;
-import com.service.empleadoservice.models.UserInfo;
+//import com.service.empleadoservice.models.TokenInfo;
+//import com.service.empleadoservice.models.UserInfo;
 import com.service.empleadoservice.services.EmpleadoService;
-import com.service.empleadoservice.services.JwtUtilService;
+//import com.service.empleadoservice.services.JwtUtilService;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -37,14 +37,14 @@ public class EmpleadoController {
 	EmpleadoService empleadoService;
 
 
-    @Autowired
-    private AuthenticationManager authenticationManager;
+    //@Autowired
+    //private AuthenticationManager authenticationManager;
 
-    @Autowired
-    UserDetailsService usuarioDetailsService;
+    //@Autowired
+    //UserDetailsService usuarioDetailsService;
 
-    @Autowired
-    private JwtUtilService jwtUtilService;
+    //@Autowired
+    //private JwtUtilService jwtUtilService;
 
 
 ///* 
@@ -58,6 +58,7 @@ public class EmpleadoController {
         return ResponseEntity.ok(empleados);
     }   
 
+    /* 
     @PostMapping("/autenticar")
     public ResponseEntity<TokenInfo> authenticate(@RequestBody UserInfo userInfo) {
 
@@ -70,4 +71,5 @@ public class EmpleadoController {
 
         return ResponseEntity.ok(tokenInfo);
     }
+    */
 }

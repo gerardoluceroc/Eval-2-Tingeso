@@ -1,3 +1,4 @@
+/* 
 package com.service.empleadoservice.models;
 
 import java.io.Serializable;
@@ -31,3 +32,4 @@ public class UserInfo implements Serializable {
         this.clave = clave;
     }
 }
+*/

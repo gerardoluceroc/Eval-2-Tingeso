@@ -54,7 +54,7 @@ public class HoraExtraController {
     }
 
     @GetMapping("hora-extra/all")
-    public ResponseEntity<List<HoraExtraEntity>> obtenerUsuarios(){
+    public ResponseEntity<List<HoraExtraEntity>> obtenerHorasExtras(){
         List<HoraExtraEntity> horasExtras = horaExtraService.getAllHoras();
         if (horasExtras.isEmpty()) {
             return ResponseEntity.noContent().build();

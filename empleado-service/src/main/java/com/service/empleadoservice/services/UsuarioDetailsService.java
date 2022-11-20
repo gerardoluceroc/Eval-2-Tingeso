@@ -1,6 +1,7 @@
+/* 
 package com.service.empleadoservice.services;
 
-//import com.tutorial.bookservice.controller.BookController;
+
 import com.service.empleadoservice.entities.UserData;
 import com.service.empleadoservice.repositories.UserDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,3 +36,4 @@ public class UsuarioDetailsService implements UserDetailsService  {
     }
 }
 
+*/

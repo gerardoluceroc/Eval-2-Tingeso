@@ -19,7 +19,7 @@ public class PlanillaEmpleadoController {
     PlanillaEmpleadoService planillaEmpleadoService;
 
     @GetMapping("planilla-sueldo/all")
-    public ResponseEntity<List<PlanillaEmpleadoEntity>> obtenerUsuarios(){
+    public ResponseEntity<List<PlanillaEmpleadoEntity>> obtenerPlanillas(){
         
         List<PlanillaEmpleadoEntity> planillas = planillaEmpleadoService.getAllPlanillas();
         return ResponseEntity.ok(planillas);

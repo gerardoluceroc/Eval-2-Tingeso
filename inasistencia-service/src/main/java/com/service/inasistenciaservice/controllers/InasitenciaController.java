@@ -31,7 +31,7 @@ public class InasitenciaController {
     }
 
     @GetMapping("inasistencia/all")
-    public ResponseEntity<List<InasistenciaEntity>> obtenerUsuarios(){
+    public ResponseEntity<List<InasistenciaEntity>> obtenerInasistencias(){
         List<InasistenciaEntity> inasistencias = inasistenciaService.getAllInasistencias();
         if (inasistencias.isEmpty()) {
             return ResponseEntity.noContent().build();

@@ -1,3 +1,4 @@
+/* 
 package com.service.empleadoservice.models;
 
 import java.io.Serializable;
@@ -17,3 +18,4 @@ public class TokenInfo implements Serializable {
     }
 }
 
+*/

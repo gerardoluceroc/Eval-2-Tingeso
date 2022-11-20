@@ -45,7 +45,7 @@ public class MarcaIngresoSalidaController {
 
 
     @GetMapping("marca-ingreso-salida/all")
-    public ResponseEntity<List<MarcaIngresoSalidaEntity>> obtenerUsuarios(){
+    public ResponseEntity<List<MarcaIngresoSalidaEntity>> obtenerMarcas(){
         
         List<MarcaIngresoSalidaEntity> marcas = marcaIngresoSalidaService.getAllMarcas();
         return ResponseEntity.ok(marcas);
