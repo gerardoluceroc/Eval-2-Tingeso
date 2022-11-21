@@ -8,10 +8,10 @@ import com.service.empleadoservice.entities.EmpleadoEntity;
 import com.service.empleadoservice.repositories.CategoriaEmpleadoRepository;
 import com.service.empleadoservice.repositories.EmpleadoRepository;
 
-import java.time.Instant;
+//import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Optional;
+//import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -85,6 +85,7 @@ public class EmpleadoService {
 
     }//Fin calcularDescuentoCotizacionPlanSalud()
 
+    /* 
     //Metodo para calcular el descuento por inasistencias de un empleado
     public double calcularDescuentoInasistenciasNoJustificadas(EmpleadoEntity empleado){
 
@@ -101,6 +102,8 @@ public class EmpleadoService {
 
         return 0;//no se usara esta función por lo que retornará cero por ahora
     }//fin calcularDescuentoInasistencias
+*/
+
 
     //Método para calcular la cantidad de años que lleva un empleado
     public int calcularYearsOfService(EmpleadoEntity empleado){
@@ -194,10 +197,10 @@ public class EmpleadoService {
 
         double descuentoCotizacionPlanSalud = calcularDescuentoCotizacionPlanSalud(empleado);
         double descuentoCotizacionPrevisional = calcularDescuentoCotizacionPrevisional(empleado);
-        double descuentoInasistencias = calcularDescuentoInasistenciasNoJustificadas(empleado);
+        //double descuentoInasistencias = calcularDescuentoInasistenciasNoJustificadas(empleado);
         double descuentoAtrasos = 0;
         
-        double descuentos = descuentoCotizacionPlanSalud + descuentoCotizacionPrevisional + descuentoInasistencias + descuentoAtrasos;
+        double descuentos = descuentoCotizacionPlanSalud + descuentoCotizacionPrevisional + descuentoAtrasos;
         return descuentos;
     }
 

@@ -1,4 +1,4 @@
-/* 
+
 package com.service.empleadoservice.repositories;
 
 import com.service.empleadoservice.entities.UserData;
@@ -9,4 +9,3 @@ import org.springframework.stereotype.Repository;
 public interface UserDataRepository extends JpaRepository<UserData, Integer> {
     UserData findByUsuario(String username);
 }
-*/
