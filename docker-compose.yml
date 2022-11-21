@@ -1,0 +1,73 @@
+version: "3.8"
+services:
+  contenedor-mysql: # Nombre de contenedor MYSQL
+    image: mysql
+    restart: always
+    volumes:
+      - ./data/db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: empleadoServiceBD
+    ports:
+      - 33060:3306
+      
+  config-service: 
+    container_name: config-service
+    image: gerardoluceroc/config-service
+    ports:
+      - "8091:8091"    
+  eureka-service: 
+    container_name: contenedor-eureka-service
+    image: gerardoluceroc/eureka-service
+    ports:
+      - "8761:8761"
+    depends_on:
+      - config-service
+    links:
+      - config-service
+    deploy:
+      restart_policy:
+        condition: on-failure
+    environment:
+      - spring.config.import=optional:configserver:http://config-service:8091
+  
+  gateway-service: 
+    container_name: gateway-service
+    image: gerardoluceroc/gateway-service
+    deploy:
+      restart_policy:
+        condition: on-failure
+    environment:
+      - spring.config.import=optional:configserver:http://config-server:8091
+      - EUREKA_URL=http://eureka-service:8761/eureka/
+    ports:
+      - "8081:8081"
+    depends_on:
+      - config-service
+      - eureka-service
+    links:
+      - config-service
+      - eureka-service
+  
+  empleado-service: 
+    container_name: empleado-service
+    image: gerardoluceroc/empleado-service
+    deploy:
+      restart_policy:
+        condition: on-failure
+    environment:
+      - spring.config.import=optional:configserver:http://config-server:8091
+      - EUREKA_URL=http://eureka-service:8761/eureka/
+      - DB_URL=jdbc:mysql://contenedor-mysql:3306/empleadoServiceBD
+      - DB_USERNAME=root
+      - DB_PASSWORD=admin
+    ports:
+      - "8080:8080"
+    depends_on:
+      - contenedor-mysql
+      - config-service
+      - eureka-service
+    links:
+      - config-service
+      - eureka-service
+      - contenedor-mysql

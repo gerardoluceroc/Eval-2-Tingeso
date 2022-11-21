@@ -4,5 +4,9 @@ spring:
   cloud:
     config:
       enabled: true
+      fail-fast: true #usado para cuando el servicio no se concecte al config service se caiga e intente conectarse de nuevo
+      retry:
+        maxAttempts: 200
+        maxInterval: 10000
       uri: http://localhost:8091
 

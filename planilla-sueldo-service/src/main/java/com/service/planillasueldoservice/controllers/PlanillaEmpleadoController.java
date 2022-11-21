@@ -1,7 +1,7 @@
 package com.service.planillasueldoservice.controllers;
 
 import java.io.IOException;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 //import java.util.Arrays;
 import java.util.List;
 //import java.util.stream.Collectors;
@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 //import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.client.RestTemplate;
+
 
 //import com.fasterxml.jackson.databind.ObjectMapper;
 import com.service.planillasueldoservice.entities.PlanillaEmpleadoEntity;
@@ -33,15 +33,13 @@ import com.service.planillasueldoservice.services.PlanillaEmpleadoService;
 //import javassist.NotFoundException;
 
 @Controller
-//@CrossOrigin(origins="http://localhost:3000")
+@CrossOrigin(origins="http://localhost:3001")
 @RequestMapping()
 public class PlanillaEmpleadoController {
 
     @Autowired
     PlanillaEmpleadoService planillaEmpleadoService;
 
-    @Autowired//BORRAR DPS ESTO SE DEBE HACER EN LOS SERVICIOS
-    RestTemplate restTemplate;
 
     @GetMapping("planilla-sueldo/all")
     public ResponseEntity<List<PlanillaEmpleadoEntity>> obtenerPlanillas(){

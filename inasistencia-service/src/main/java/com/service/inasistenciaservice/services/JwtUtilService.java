@@ -1,4 +1,4 @@
-package com.service.horaextraservice.services;
+package com.service.inasistenciaservice.services;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class JwtUtilService {
-    private static final String JWT_SECRET_KEY = "RVZBTDJfVElOR0VTT19KV1RfS0VZ"; // Base64 de EVAL2_TINGESO_JWT_KEY
+    private static final String JWT_SECRET_KEY = "TVRJTkdTV19KV1RfS0VZ"; // Base64 de MTINGSW_JWT_KEY
     public static final long JWT_TOKEN_VALIDITY = 1000 * 60 * 60 * (long) 3; // 3 Horas
 
     public String extractUsername(String token) {
