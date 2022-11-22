@@ -4,11 +4,16 @@ spring:
   cloud:
     config:
       enabled: true
+      fail-fast: true #usado para cuando el servicio no se concecte al config service se caiga e intente conectarse de nuevo
+      retry:
+        maxAttempts: 200
+        maxInterval: 10000
       uri: http://localhost:8091
   datasource:
-    url: jdbc:mysql://localhost:33060/planillaSueldoServiceBD
+    url: jdbc:mysql://contenedor-mysql:3306/planillaSueldoServiceBD
     username: root
     password: admin
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: create
