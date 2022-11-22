@@ -66,7 +66,7 @@ public class EmpleadoController {
 
         ArrayList<PlanillaEmpleadoModel> planillas = new ArrayList<PlanillaEmpleadoModel>();
 
-        ArrayList<EmpleadoEntity> empleados = empleadoService.obtenerUsuarios();
+        List<EmpleadoEntity> empleados = empleadoService.obtenerUsuarios();
 
         int cantidadEmpleados = empleados.size();
 

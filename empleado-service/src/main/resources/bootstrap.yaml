@@ -8,7 +8,7 @@ spring:
       retry:
         maxAttempts: 200
         maxInterval: 10000
-      uri: http://localhost:8091
+      uri: http://config-service:8091
   datasource:
     url: jdbc:mysql://contenedor-mysql:3306/empleadoServiceBD
     username: root

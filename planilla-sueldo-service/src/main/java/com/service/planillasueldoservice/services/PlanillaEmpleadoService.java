@@ -60,8 +60,8 @@ public class PlanillaEmpleadoService {
 
 
     public List<PlanillaEmpleadoEntity> getPlanillas() {
-        String url = "http://localhost:8080/empleado/planilla";
-        //String url = "http://empleado-service/empleado/all";
+        //String url = "http://localhost:8080/empleado/planilla";
+        String url = "http://empleado-service:8080/empleado/planilla";
         ResponseEntity<Object[]> response = restTemplate.getForEntity(url, Object[].class); // Se usa lista de Object para mapear la repuesta JSON
         Object[] records = response.getBody(); // Obtener lista de empleados desde microservicio empleados
         ObjectMapper mapper = new ObjectMapper(); // Mapper desde object a modelo Empleado
