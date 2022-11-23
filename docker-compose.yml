@@ -50,52 +50,52 @@ services:
       - config-service
       #- eureka-service
   
-  empleado-service: 
-    container_name: empleado-service
-    image: gerardoluceroc/empleado-service
-    deploy:
-      restart_policy:
-        condition: on-failure
-    environment:
-      - spring.config.import=optional:configserver:http://config-service:8091
-      #- EUREKA_URL=http://eureka-service:8761/eureka/
-      - DB_URL=jdbc:mysql://contenedor-mysql:3306/empleadoServiceBD
-      - DB_USERNAME=root
-      - DB_PASSWORD=admin
-    ports:
-      - "8080:8080"
-    depends_on:
-      - contenedor-mysql
-      - config-service
-      #- eureka-service
-    links:
-      - contenedor-mysql
-      - config-service
-      #- eureka-service
+  # empleado-service: 
+  #   container_name: empleado-service
+  #   image: gerardoluceroc/empleado-service
+  #   deploy:
+  #     restart_policy:
+  #       condition: on-failure
+  #   environment:
+  #     - spring.config.import=optional:configserver:http://config-service:8091
+  #     #- EUREKA_URL=http://eureka-service:8761/eureka/
+  #     - DB_URL=jdbc:mysql://contenedor-mysql:3306/empleadoServiceBD
+  #     - DB_USERNAME=root
+  #     - DB_PASSWORD=admin
+  #   ports:
+  #     - "8080:8080"
+  #   depends_on:
+  #     - contenedor-mysql
+  #     - config-service
+  #     #- eureka-service
+  #   links:
+  #     - contenedor-mysql
+  #     - config-service
+  #     #- eureka-service
   
 
-  hora-extra-service: 
-    container_name: hora-extra-service
-    image: gerardoluceroc/hora-extra-service
-    deploy:
-      restart_policy:
-        condition: on-failure
-    environment:
-      - spring.config.import=optional:configserver:http://config-service:8091
-      #- EUREKA_URL=http://eureka-service:8761/eureka/
-      - DB_URL=jdbc:mysql://contenedor-mysql:3306/horasExtrasBD
-      - DB_USERNAME=root
-      - DB_PASSWORD=admin
-    ports:
-      - "8084:8084"
-    depends_on:
-      - contenedor-mysql
-      - config-service
-      #- eureka-service
-    links:
-      - contenedor-mysql
-      - config-service
-      #- eureka-service
+  # hora-extra-service: 
+  #   container_name: hora-extra-service
+  #   image: gerardoluceroc/hora-extra-service
+  #   deploy:
+  #     restart_policy:
+  #       condition: on-failure
+  #   environment:
+  #     - spring.config.import=optional:configserver:http://config-service:8091
+  #     #- EUREKA_URL=http://eureka-service:8761/eureka/
+  #     - DB_URL=jdbc:mysql://contenedor-mysql:3306/horasExtrasBD
+  #     - DB_USERNAME=root
+  #     - DB_PASSWORD=admin
+  #   ports:
+  #     - "8084:8084"
+  #   depends_on:
+  #     - contenedor-mysql
+  #     - config-service
+  #     #- eureka-service
+  #   links:
+  #     - contenedor-mysql
+  #     - config-service
+  #     #- eureka-service
 
   inasistencia-service: 
     container_name: inasistencia-service
@@ -119,6 +119,7 @@ services:
       - contenedor-mysql
       - config-service
       #- eureka-service
+
   marca-entrada-salida-service: 
     container_name: marca-entrada-salida-service
     image: gerardoluceroc/marca-entrada-salida-service
@@ -142,25 +143,25 @@ services:
       - config-service
       #- eureka-service
 
-  planilla-sueldo-service: 
-    container_name: planilla-sueldo-service
-    image: gerardoluceroc/planilla-sueldo-service
-    deploy:
-      restart_policy:
-        condition: on-failure
-    environment:
-      - spring.config.import=optional:configserver:http://config-service:8091
-      #- EUREKA_URL=http://eureka-service:8761/eureka/
-      - DB_URL=jdbc:mysql://contenedor-mysql:3306/planillaSueldoServiceBD
-      - DB_USERNAME=root
-      - DB_PASSWORD=admin
-    ports:
-      - "8087:8087"
-    depends_on:
-      - contenedor-mysql
-      - config-service
-      #- eureka-service
-    links:
-      - contenedor-mysql
-      - config-service
-      #- eureka-service
+  # planilla-sueldo-service: 
+  #   container_name: planilla-sueldo-service
+  #   image: gerardoluceroc/planilla-sueldo-service
+  #   deploy:
+  #     restart_policy:
+  #       condition: on-failure
+  #   environment:
+  #     - spring.config.import=optional:configserver:http://config-service:8091
+  #     #- EUREKA_URL=http://eureka-service:8761/eureka/
+  #     - DB_URL=jdbc:mysql://contenedor-mysql:3306/planillaSueldoServiceBD
+  #     - DB_USERNAME=root
+  #     - DB_PASSWORD=admin
+  #   ports:
+  #     - "8087:8087"
+  #   depends_on:
+  #     - contenedor-mysql
+  #     - config-service
+  #     #- eureka-service
+  #   links:
+  #     - contenedor-mysql
+  #     - config-service
+  #     #- eureka-service
